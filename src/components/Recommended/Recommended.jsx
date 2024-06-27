@@ -1,6 +1,10 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import Musicplayer from '../Music/Musicplayer';
+import play from '../../assets/play-solid.svg';
+import cPlay from '../../assets/circle-play-solid.svg';
+import cplay1 from '../../assets/circle-play-solid (1).svg'
+import useUser from '../../customHooks/useUser';
 const Recommended = () => {
 
 
@@ -9,10 +13,25 @@ const Recommended = () => {
   
     const [selectedMusic, setSelectedMusic] = useState();
 
+    const {searchText} = useUser();
     useEffect(() => {
-        async function fetchSongsList() {
-          const url = "https://academics.newtonschool.co/api/v1/music/song";
-          const myHeaders = new Headers();
+      fetchSongsList();
+    }, []);
+
+    useEffect(()=>{
+      fetchSongsList();
+    },[searchText]);
+  
+  
+    async function fetchSongsList() {
+      
+        let url;
+        if(searchText != null && searchText != ""){
+           url = `https://academics.newtonschool.co/api/v1/music/song?title=${searchText}`;
+        }else{
+          url = "https://academics.newtonschool.co/api/v1/music/song";
+        }
+        const myHeaders = new Headers();
           myHeaders.append("projectId", "z5civ6ptecws");
     
           const requestOptions = {
@@ -42,8 +61,9 @@ const Recommended = () => {
             setError(error.message);
           }
         }
-        fetchSongsList();
-      }, []);
+       
+
+      
       if (error) {
         return <p>Error : {error}</p>;
       }
@@ -51,7 +71,6 @@ const Recommended = () => {
   return (
     <>
     <div>
-        
         <div >
         <div className="mt-10">
           <h1 className="text-2xl font-bold mb-5">Recommended music</h1>
@@ -60,13 +79,18 @@ const Recommended = () => {
               const { title, _id, audio_url, thumbnail } = song;
               return (
                 <div className="flex" key={index}>
+                
                   <div className="flex w-48 gap-1">
                     <section
                       onClick={() =>
                         setSelectedMusic({ title, _id, audio_url, thumbnail })
                       }
                     >
-                      <img src={thumbnail} alt="" className="h-52 w-48" />
+                      <div className='ImgContainer'>
+                        <img src={cPlay} className='playIcon' />
+                        <img src={thumbnail} alt="" className="h-52 w-48 imageTag" />
+                      </div>
+                      
                       <p>{title}</p>
                     </section>
                   </div>

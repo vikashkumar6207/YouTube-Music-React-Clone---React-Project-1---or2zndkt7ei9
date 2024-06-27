@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../../assets/logo.svg';
 import cast from '../../assets/chromecast (1).svg';
@@ -6,10 +6,12 @@ import profile from '../../assets/profile.jpeg';
 import srch from '../../assets/searchSvgW.svg';
 import menu from '../../assets/menu-bars.svg';
 import ellipsis from '../../assets/ellipsis-vertical-solid.svg';
+import { UserContext } from '../../Provider/UserProvider';
 
-const Navbar = ({searchHandler}) => {
+const Navbar = () => {
 
-
+  const contextData = useContext(UserContext);
+  const {setSearchText} = contextData;
   return (
     <>
     <div className=' flex fixed w-full bg-black text-white items-center border-b p-2 justify-between' style={{height: '100px'}}>
@@ -19,7 +21,7 @@ const Navbar = ({searchHandler}) => {
     </Link>
     <div className='bg-inherit'>
         <img src={srch} className='absolute  h-5 mt-3 ml-3' style={{background: 'transparent'}}/>
-        <input type='text' placeholder='Search songs, albums, artists, podcasts' className='searchInput' onChange={searchHandler}/>
+        <input type='text' placeholder='Search songs, albums, artists, podcasts' className='searchInput' onChange={(e)=> setSearchText(e.target.value)}/>
 
     </div>
     <div className='bg-transparent flex items-center '>

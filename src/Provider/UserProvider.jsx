@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useContext,useState } from 'react';
 
 export const UserContext = React.createContext ({
@@ -7,15 +7,22 @@ export const UserContext = React.createContext ({
     nameHandler: () => {},
     tokenHandler: () => {},
     logout: () => {},
+    searchText: null,
 });
 
 const UserProvider = (props) => {
-    const [getName, setName] = useState(() =>{
-        sessionStorage.getItem("name")
-    });
-    const [getToken, setToken] = useState(()=>{
-        sessionStorage.getItem("token")
-    });
+
+
+
+    const [getName, setName] = useState('');
+    const [getToken, setToken] = useState('');
+
+    const [searchText, setSearchText] = useState(null);
+
+    useEffect(()=>{
+        setName(sessionStorage.getItem("name") || '');
+        setToken(sessionStorage.getItem("token") || '');
+    },[])
 
     console.log(getName, getToken, "USER PROVIDER LOGS");
 
@@ -33,6 +40,8 @@ const UserProvider = (props) => {
     function logout(){
         setName("");
         setToken("");
+        sessionStorage.clear();
+        location.reload();
     }
     const valueObj = {
         getName,
@@ -40,6 +49,8 @@ const UserProvider = (props) => {
         tokenHandler,
         nameHandler,
         logout,
+        searchText,
+        setSearchText,
     };
 
     
