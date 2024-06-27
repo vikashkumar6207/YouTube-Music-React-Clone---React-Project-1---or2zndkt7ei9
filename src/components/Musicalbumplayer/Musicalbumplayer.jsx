@@ -8,7 +8,7 @@ const Musicalbumplayer = (props) => {
         <div className="music_player" key={_id}>
         <img className="music_player_image" src={image}/>
         <div className="music_title" >{title}</div>
-        <audio  controls src={audio_url}></audio>
+        {/* <audio  controls src={audio_url}></audio> */}
         </div>
     </div>
   )
