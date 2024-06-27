@@ -1,0 +1,20 @@
+
+
+.parentContainer{
+   display: flex;
+  
+}
+
+.asideBar{
+   height: 85vh;
+   width: 20vw;
+   position: fixed;
+   top: 100px;
+   border-right: 1px solid white;
+}
+.mainBody{
+    width: calc(100vw - 22vw);
+    position: absolute;
+    left: 22vw;
+    top: 110px;
+}
