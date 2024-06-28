@@ -22,7 +22,7 @@ function App() {
     const inputVal = e.target.value.toLowerCase();
     setSearchInput(inputVal);
   }
-  console.log('searchInput',searchInput);
+  // console.log('searchInput',searchInput);
 
   return (
     <>

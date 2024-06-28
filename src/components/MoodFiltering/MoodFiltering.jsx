@@ -18,8 +18,8 @@ const MoodFiltering = () => {
 
     const response = await  fetch(url,requestOptions);
       const result =  response;
-      console.log(result);
-      console.log('moodFilter', result);
+      // console.log(result);
+      // console.log('moodFilter', result);
       setFilteredMusic(result);
     }
     

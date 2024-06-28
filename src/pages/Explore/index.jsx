@@ -1,39 +1,62 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
-import img1 from '../../assets/Explore/Explore01.jpg';
-import img2 from '../../assets/Explore/Explore.jpg';
-import img3 from '../../assets/Explore/Explore03.jpg';
-import img4 from '../../assets/Explore/Explore04.jpg';
-import img5 from '../../assets/Explore/Explore05.jpg';
-import img6 from '../../assets/Explore/Explore06.jpg';
-import img7 from '../../assets/Explore/Explore07.jpg';
-import img8 from '../../assets/Explore/Explore08.jpg';
-import img9 from '../../assets/Explore/Explore09.jpg';
-import img10 from '../../assets/Explore/Explore10.jpg';
-import img11 from '../../assets/Explore/Explore11.jpg';
-import img12 from '../../assets/Explore/Explore12.jpg';
-import img13 from '../../assets/Explore/Explore13.jpg';
-import img14 from '../../assets/Explore/Explore14.jpg';
-import img15 from '../../assets/Explore/Explore15.jpg';
-import img16 from '../../assets/Explore/Explore16.jpg';
-import img17 from '../../assets/Explore/Explore17.jpg';
-import img18 from '../../assets/Explore/Explore18.jpg';
-import img19 from '../../assets/Explore/Explore19.jpg';
-import img20 from '../../assets/Explore/Explore20.jpg';
-import img21 from '../../assets/Explore/Explore21.jpg';
-import img22 from '../../assets/Explore/Explore22.jpg';
-import img23 from '../../assets/Explore/Explore23.jpg';
-import Commingsoon from '../../components/Commingsoon/Commingsoon';
-import Asidebar from '../../components/Asidebar/Asidebar';
+import img1 from "../../assets/Explore/Explore01.jpg";
+import img2 from "../../assets/Explore/Explore.jpg";
+import img3 from "../../assets/Explore/Explore03.jpg";
+import img4 from "../../assets/Explore/Explore04.jpg";
+import img5 from "../../assets/Explore/Explore05.jpg";
+import img6 from "../../assets/Explore/Explore06.jpg";
+import img7 from "../../assets/Explore/Explore07.jpg";
+import img8 from "../../assets/Explore/Explore08.jpg";
+import img9 from "../../assets/Explore/Explore09.jpg";
+import img10 from "../../assets/Explore/Explore10.jpg";
+import img11 from "../../assets/Explore/Explore11.jpg";
+import img12 from "../../assets/Explore/Explore12.jpg";
+import img13 from "../../assets/Explore/Explore13.jpg";
+import img14 from "../../assets/Explore/Explore14.jpg";
+import img15 from "../../assets/Explore/Explore15.jpg";
+import img16 from "../../assets/Explore/Explore16.jpg";
+import img17 from "../../assets/Explore/Explore17.jpg";
+import img18 from "../../assets/Explore/Explore18.jpg";
+import img19 from "../../assets/Explore/Explore19.jpg";
+import img20 from "../../assets/Explore/Explore20.jpg";
+import img21 from "../../assets/Explore/Explore21.jpg";
+import img22 from "../../assets/Explore/Explore22.jpg";
+import img23 from "../../assets/Explore/Explore23.jpg";
+import Commingsoon from "../../components/Commingsoon/Commingsoon";
+import Asidebar from "../../components/Asidebar/Asidebar";
 
-import './Explore.css';
+import "./Explore.css";
 
 const Explore = () => {
-
   const [comming, setComming] = useState(false);
 
   const Button = ["New releases", "Charts", "Moods & genres", "Podcasts"];
-  const arr = [img1,img2,img3,img4,img5,img6,img7,img8,img9,img10,img11,img12,img13,img14,img15,img16,img17,img18,img19,img20,img21,img22,img23];
+  const arr = [
+    img1,
+    img2,
+    img3,
+    img4,
+    img5,
+    img6,
+    img7,
+    img8,
+    img9,
+    img10,
+    img11,
+    img12,
+    img13,
+    img14,
+    img15,
+    img16,
+    img17,
+    img18,
+    img19,
+    img20,
+    img21,
+    img22,
+    img23,
+  ];
 
   const MoodsWithColors = [
     { mood: "Chill", color: "#FF5733" },
@@ -83,43 +106,56 @@ const Explore = () => {
     { mood: "Reggae & Caribbean", color: "#FF33A1" },
     { mood: "Rock", color: "#33FF57" },
     { mood: "Tamil", color: "#5733FF" },
-    { mood: "Telugu", color: "#FF5733" }
+    { mood: "Telugu", color: "#FF5733" },
   ];
 
-function commingsoonfun(){
-  setComming(true);
-}
+  function commingsoonfun() {
+    setComming(true);
+  }
 
   return (
-    <div className='ExploreConatiner'>
-      <div className='Asidebar'>
+    <div className="ExploreConatiner">
+      <div className="Asidebar">
         <Asidebar />
-        </div>
-    <div className='Mainbar'>
-    {
-      comming && comming ?(<Commingsoon />) : (
-      <div>
-    <div className='flex bg-inherit  mt-8 justify-center'>
-      
-      {Button.map((btn, index)=> <button className='h-10 w-36 ExploreBtn' key={index}>{btn}</button>)}
-    </div>
-    <div className='overflow-scroll mt-10'>
-    <h1 className='text-2xl font-bold mb-5'>New albums & singles</h1>
-      <div className='flex gap-1 m-1 mt-4'>
-       {arr.map((image, index)=> <img src={image} key={index} className='h-52 w-48'/>)}
+      </div>
+      <div className="Mainbar">
+        {comming ? ( <Commingsoon />
+        ) : (
+          <div>
+            <div className="ExploreParent">
+              {Button.map((btn, index) => (
+                <button className="ExploreBtn" key={index}>
+                  {btn}
+                </button>
+              ))}
+            </div>
+            <div className="overflow-scroll mt-10">
+              <h1 className="text-2xl font-bold mb-5">New albums & singles</h1>
+              <div className="flex gap-1 m-1 mt-4">
+                {arr.map((image, index) => (
+                  <img src={image} key={index} className="h-52 w-48" />
+                ))}
+              </div>
+            </div>
+            <div>
+              <h1 className="text-2xl">Moods & genres</h1>
+              <div className="moodBtnContainer">
+                {MoodsWithColors.map((item, index) => (
+                  <button
+                    onClick={commingsoonfun}
+                    className="btnClass"
+                    style={{ borderLeft: `10px solid ${item.color}` }}
+                  >
+                    {item.mood}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
-    <div>
-      { MoodsWithColors.map((item, index)=>  <div style={{display: 'flex', flexDirection: 'none'}}><button  key={index} style={{background: `${item.color}`}} className='MoodsBtn' onClick={commingsoonfun} >{item.mood}</button></div>)}
-
-       { MoodsWithColors.map((item, index)=>  <div><button  key={index} style={{background: `${item.color}`}} className='MoodsBtn' onClick={commingsoonfun} >{item.mood}</button></div>)}
-
-    </div>
-    </div>
-    )}
-    </div>
-    </div>
-  )
-}
+  );
+};
 
 export default Explore;

@@ -1,64 +1,61 @@
-import React, { useEffect } from 'react'
-import { useContext,useState } from 'react';
+import React, { createContext, useState } from "react";
 
-export const UserContext = React.createContext ({
-    getToken: "",
-    getName: "",
-    nameHandler: () => {},
-    tokenHandler: () => {},
-    logout: () => {},
-    searchText: null,
+export const UserContext = React.createContext({
+  getName: "",
+  getToken: "",
+  nameHandler: () => {},
+  tokenHandler: () => {},
+  emailHandler: () => {},
+  setSearchText: null,
 });
 
 const UserProvider = (props) => {
+  const [getToken, setToken] = useState(sessionStorage.getItem("token"));
+  const [getName, setName] = useState(sessionStorage.getItem("name"));
+  const [getEmail, setEmail] = useState(sessionStorage.getItem("email"));
+
+  const [searchText, setSearchText] = useState('');
 
 
 
-    const [getName, setName] = useState('');
-    const [getToken, setToken] = useState('');
 
-    const [searchText, setSearchText] = useState(null);
 
-    useEffect(()=>{
-        setName(sessionStorage.getItem("name") || '');
-        setToken(sessionStorage.getItem("token") || '');
-    },[])
+  console.log('USER PROVIDER LOGS',getName, getToken,getEmail );
 
-    console.log(getName, getToken, "USER PROVIDER LOGS");
+  const { children } = props;
 
-    const {children} = props;
-
-    function tokenHandler(token){
+  function tokenHandler(token) {
+   
         setToken(token);
         sessionStorage.setItem("token", token);
-    }
-    function nameHandler(name){
+  }
+  function nameHandler(name) {
+    
         setName(name);
         sessionStorage.setItem("name", name);
-    }
+  }
+  function emailHandler(email){
+    setEmail(email);
+    sessionStorage.setItem("email",email);
+  }
 
-    function logout(){
-        setName("");
-        setToken("");
-        sessionStorage.clear();
-        location.reload();
-    }
-    const valueObj = {
-        getName,
-        getToken,
-        tokenHandler,
-        nameHandler,
-        logout,
-        searchText,
-        setSearchText,
-    };
+ 
 
-    
-    return (
-        <>
-            <UserContext.Provider value={valueObj}>{children}</UserContext.Provider>
-        </>
-    )
-}
+  const valueObj = {
+    getName,
+    getToken,
+    tokenHandler,
+    nameHandler,
+    emailHandler,
+    searchText,
+    setSearchText,
+  };
 
-export default UserProvider
+  return (
+    <>
+      <UserContext.Provider value={valueObj}>{children}</UserContext.Provider>
+    </>
+  );
+};
+
+export default UserProvider;

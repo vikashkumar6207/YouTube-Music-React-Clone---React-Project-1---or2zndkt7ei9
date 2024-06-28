@@ -4,9 +4,35 @@
     width: 18vw;
     padding: 5px;
     font-size: 16px;
-   
+    background: transparent;
+    display: flex;
+    align-items: center;
+    margin: 2px;
+    padding: 15px;
+    border-radius: 14px;
 }
 
 .asidemenu:hover{
     background: rgba(255, 255, 255, 0.2);
+}
+.SignBtnContainer{
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 20px;
+    margin: 10px;
+    gap: 5px;
+}
+.SignBtn{
+    height: 40px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+}
+
+.SignBtn:hover{
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.signmsg{
+    overflow: auto;
+    font-size: 12px !important;
 }

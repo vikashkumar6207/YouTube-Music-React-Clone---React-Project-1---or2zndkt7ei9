@@ -10,11 +10,11 @@
    width: 20vw;
    position: fixed;
    top: 100px;
-   border-right: 1px solid white;
+   border-right: 1px solid rgba(255,255,255,0.2);
 }
 .mainBody{
-    width: calc(100vw - 22vw);
+    width: calc(100vw - 24vw);
     position: absolute;
-    left: 22vw;
+    left: 24vw;
     top: 110px;
 }

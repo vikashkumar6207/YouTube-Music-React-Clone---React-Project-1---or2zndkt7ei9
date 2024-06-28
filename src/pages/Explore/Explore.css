@@ -1,5 +1,19 @@
 .ExploreConatiner{
     display: flex;
+    gap: 10px;
+}
+
+.ExploreParent{
+    display: flex;
+    background: transparent;
+    margin-top: 30px;
+    justify-content: center;
+    gap: 20px;
+}
+.ExploreBtn{
+    height: 60px;
+    width: 175px;
+    border-radius: 6px;
 }
 
 .Asidebar{
@@ -7,12 +21,33 @@
     width: 20vw;
     position: fixed;
     top: 100px;
-    border-right: 1px solid white;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .Mainbar{
-    width: calc(100vw - 22vw);
+    width: calc(100vw - 24vw);
     position: absolute;
-    left: 22vw;
+    left: 24vw;
     top: 110px;
+}
+
+.btnClass{
+    height: 50px;
+    min-width: 200px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+
+    
+}
+.moodBtnContainer{
+    height: 250px;
+    width: auto;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow: scroll;
+    align-items: center;
+    margin-top: 50px;
+    
 }

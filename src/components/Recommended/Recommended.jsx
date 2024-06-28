@@ -49,7 +49,7 @@ const Recommended = () => {
             }
     
             const result = await response.json();
-            console.log("Fetched data:", result);
+            // console.log("Fetched data:", result);
             if (result && Array.isArray(result.data)) {
               setMusicList(result.data);
               setError(error.message);
@@ -57,7 +57,7 @@ const Recommended = () => {
               throw new Error("Data format is incorrect");
             }
           } catch (error) {
-            console.error("Error fetching data:", error);
+            // console.error("Error fetching data:", error);
             setError(error.message);
           }
         }
