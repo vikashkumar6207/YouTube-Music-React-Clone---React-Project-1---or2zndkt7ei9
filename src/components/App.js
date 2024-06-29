@@ -8,6 +8,7 @@ import Navbar from "./Navbar/Navbar";
 import { useState } from "react";
 import Asidebar from "./Asidebar/Asidebar";
 import ProtectedRouteComponent from "./ProtectedRouteComponent/ProtectedRouteComponent";
+import Signup from "./Signup/Signup";
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
         </ProtectedRouteComponent>
         }></Route>
       <Route path="/login" element={<Login setProfileImg={setProfileImg} />}></Route>
+      <Route path="/signup" element={<Signup />}></Route>
     </Routes>
     
     </>
