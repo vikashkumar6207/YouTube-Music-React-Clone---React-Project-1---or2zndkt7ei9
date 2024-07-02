@@ -5,12 +5,12 @@ import play from '../../assets/play-solid.svg';
 import cPlay from '../../assets/circle-play-solid.svg';
 import cplay1 from '../../assets/circle-play-solid (1).svg'
 import useUser from '../../customHooks/useUser';
+import { useNavigate } from 'react-router-dom';
 const Recommended = () => {
 
 
     const [musicList, setMusicList] = useState([]);
     const [error, setError] = useState("");
-  
     const [selectedMusic, setSelectedMusic] = useState();
 
     const {searchText} = useUser();
@@ -100,14 +100,18 @@ const Recommended = () => {
           </div>
         </div>
         {selectedMusic && (
+          <>
           <Musicplayer
             title={selectedMusic.title}
             _id={selectedMusic._id}
             audio_url={selectedMusic.audio_url}
             thumbnail={selectedMusic.thumbnail}
           />
+         
+          </>
         )}
         </div>
+        
     </div>
     </>
   )

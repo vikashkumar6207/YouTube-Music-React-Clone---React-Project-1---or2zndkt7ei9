@@ -14,7 +14,7 @@ import EasyEvenings from "../../components/EasyEvenings/EasyEvenings";
 import Bollywood from "../../components/Bollywood/Bollywood";
 import MoodFiltering from "../../components/MoodFiltering/MoodFiltering";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Home = () => {
 
  
@@ -28,7 +28,7 @@ const Home = () => {
         <div>
           <div className="mainBody">
             <Buttons />
-            <FontAwesomeIcon icon="fa-regular fa-circle-play" />
+            {/* <FontAwesomeIcon icon="fa-regular fa-circle-play" /> */}
             <Recommended  />
             <Multiverse  />
             <EasyEvenings />

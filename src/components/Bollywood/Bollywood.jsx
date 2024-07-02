@@ -1,15 +1,16 @@
 // import React from "react";
 import { useState, useEffect } from "react";
 import Library from "../../pages/Library/Library";
-import { Link, Route } from "react-router-dom";
+import { Link, Route, useNavigate } from "react-router-dom";
 import Musicalbumplayer from "../Musicalbumplayer/Musicalbumplayer";
+import Musicplayer from '../Music/Musicplayer';
 import useUser from "../../customHooks/useUser";
 
 const Bollywood = () => {
   const [musicAlbumList, setMusicAlbumList] = useState([]);
-
   const [selectedMusicList, setSelectedMusicList] = useState();
-
+  const [currentAlbum,setCurrentAlbum] = useState('');
+  const navigate = useNavigate();
     const {searchText} = useUser();
   useEffect(() => {
     try {
@@ -48,9 +49,13 @@ const Bollywood = () => {
  
 
   return (
+
     <div>
-    <div>
-    <div className="mt-10">
+    <div className="mt-10" onClick={(e)=>{
+      setCurrentAlbum(e.target.id);
+       localStorage.setItem("albumID", e.target.id);
+       navigate("/musicalbumplayer");
+    }}>
         <h1 className="text-2xl font-bold mb-5">Bollywood</h1>
       <div className="flex overflow-scroll gap-1">
         
@@ -73,14 +78,13 @@ const Bollywood = () => {
            )})}
       </div>
     </div>
-          {selectedMusicList && <Musicalbumplayer 
+          {/* {selectedMusicList && <Musicalbumplayer
            _id={selectedMusicList._id} 
            artists={selectedMusicList.artists}
            image={selectedMusicList.image}
            songs={selectedMusicList.songs}
            title={selectedMusicList.title}
-          /> }
-    </div>
+          /> } */}
     </div>
   );
 };
