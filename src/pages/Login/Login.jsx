@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../Provider/UserProvider";
 import { useNavigate } from "react-router-dom";
+import Page404 from "../Page404";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -8,7 +9,7 @@ const Login = () => {
   const { tokenHandler, nameHandler, emailHandler } = ContextData;
 
   const [success, setSuccess] = useState("");
-  const [err, setError] = useState();
+  const [Error, setError] = useState();
 
   const [loginstate, setLoginstate] = useState({
     name: "",
@@ -76,7 +77,8 @@ const Login = () => {
 
   return (
     <>
-      <div className="flex justify-center mt-28">
+     {Error ? <Page404  /> : 
+      <div className="flex justify-center mt-28 bg-inherit">
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -90,8 +92,8 @@ const Login = () => {
           <div className="flex justify-center">
             <h1 className="text-2xl font-bold">Sign In Form</h1>
           </div>
-          {err ? (
-            <h1 className="text-red-600">{err}</h1>
+          {Error ? (
+            <h1 className="text-red-600">{Error}</h1>
           ) : (
             <h1 className="text-green-700">{success}</h1>
           )}
@@ -137,7 +139,7 @@ const Login = () => {
             </span>
           </p>
         </form>
-      </div>
+      </div>}
     </>
   );
 };

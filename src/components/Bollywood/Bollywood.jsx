@@ -8,7 +8,6 @@ import useUser from "../../customHooks/useUser";
 
 const Bollywood = () => {
   const [musicAlbumList, setMusicAlbumList] = useState([]);
-  const [selectedMusicList, setSelectedMusicList] = useState();
   const [currentAlbum,setCurrentAlbum] = useState('');
   const navigate = useNavigate();
     const {searchText} = useUser();
@@ -41,9 +40,9 @@ const Bollywood = () => {
 
       const response = await fetch(url, requestOptions);
       const result = await response.json();
-      // console.log("getMusicAlbum", result);
+      
       setMusicAlbumList(result.data);
-      // console.log("getMusicAlbum one", result.data[0]);
+    
     }
     
  
@@ -53,7 +52,7 @@ const Bollywood = () => {
     <div>
     <div className="mt-10" onClick={(e)=>{
       setCurrentAlbum(e.target.id);
-       localStorage.setItem("albumID", e.target.id);
+       
        navigate("/musicalbumplayer");
     }}>
         <h1 className="text-2xl font-bold mb-5">Bollywood</h1>
@@ -65,8 +64,10 @@ const Bollywood = () => {
            return (
             <div  key={index}>
               <div className="flex w-48 gap-1">
-                <section onClick={() =>
-                        setSelectedMusicList({ _id, artists,image,songs,title })
+                <section onClick={(e) =>{
+                   { _id }
+                    localStorage.setItem("albumID", _id);
+                  } 
                       }>
                         
                 <img src={item.image} alt="" className="h-52 w-48" />

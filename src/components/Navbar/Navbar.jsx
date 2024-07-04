@@ -19,9 +19,9 @@ const Navbar = () => {
   return (
     <>
     <div className=' flex fixed w-full bg-black text-white items-center p-2 justify-between Navbarborder' style={{height: '100px'}}>
-    <NavLink to="/" className='flex gap-2 bg-inherit'>
+    <NavLink to="/" className='flex'>
         <img src={menu} className='h-6'/>
-        <img src={logo} className='bg-inherit w-20'/>
+        <img src={logo} className=' w-20' />
     </NavLink>
     <div className='bg-inherit'>
         <img src={srch} className='absolute  h-5 mt-3 ml-3' style={{background: 'transparent'}}/>

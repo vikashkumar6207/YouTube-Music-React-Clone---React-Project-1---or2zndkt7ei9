@@ -1,0 +1,28 @@
+
+.songplay_container{
+    margin-top: 102px;
+    display: flex;
+    
+}
+
+.asidebar{
+    height: 100vh;
+    position: fixed;
+    width: 20vw;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+.mainbar{  
+    width: calc(100vw - 25vw);
+    margin-left: 24vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  
+}
+
+.image{
+    height: 300px;
+    width: 300px;
+    border-radius: 5px;
+}

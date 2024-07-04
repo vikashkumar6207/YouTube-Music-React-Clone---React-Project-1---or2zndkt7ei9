@@ -2,7 +2,12 @@ import React from 'react'
 
 const Page404 = () => {
   return (
-    <div>Page404</div>
+    <div className='mt-36 flex justify-center'>
+      <div>
+      <p className='text-5xl'>Error 404...</p>
+      <h1 className='text-5xl'>Something Error. !</h1>
+      </div>
+    </div>
   )
 }
 

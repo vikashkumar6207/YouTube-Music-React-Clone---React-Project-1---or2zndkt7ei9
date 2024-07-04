@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Outlet, Route, Routes } from "react-router-dom";
 // import { useAuth0 } from '@auth0/auth0-react'
 import Home from "../pages/Home/Home";
 import Explore from "../pages/Explore/index";
@@ -11,6 +11,7 @@ import ProtectedRouteComponent from "./ProtectedRouteComponent/ProtectedRouteCom
 import Signup from "./Signup/Signup";
 import Page404 from "../pages/Page404";
 import Musicalbumplayer from "./Musicalbumplayer/Musicalbumplayer";
+import Songplay from "./Music/Songplay";
 
 function App() {
   // const {user, loginWithRedirect} = useAuth0();
@@ -53,6 +54,7 @@ function App() {
         ></Route>
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="/musicalbumplayer" element={<Musicalbumplayer />}></Route>
+        <Route path="/songplay" element={<Songplay /> }></Route>
         <Route path="/*" element={<Page404 />}></Route>
       </Routes>
     </>

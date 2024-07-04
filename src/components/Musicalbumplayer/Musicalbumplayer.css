@@ -1,32 +1,87 @@
-.music_album_player{
-    width: 100%;
-    background: rgba(0, 0, 0, 1);
-    position: fixed;
-    bottom: 0px;
-    left: 0;
-    right: 0;
-    display: flex;
-    gap: 5px;
-    align-items: center;
-    padding: 10px;
-    border-top: 1px solid rgba(255, 255, 255, 0.5);
-  }
-  
-  .music_album_player_image{
-    width: 50px;
-    height: 50px;
-    
-  }
-  
-  /* audio{ */
-    /* border-radius: 20px; */
-    /* background: #fff; */
-    /* color: #fff; */
-  /* } */
+.aside {
+  height: 85vh;
+  width: 20vw;
+  position: fixed;
+  top: 100px;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
 
-  
-  .music_album_title{
-    background: transparent;
-    color: #fff;
-    
-  }
+.music_album_player_parent {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.music_player_container {
+  width: calc(100vw - 24vw);
+  position: absolute;
+  left: 24vw;
+  top: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.music_album_player {
+  display: flex;
+  flex-direction: column;
+}
+.imgtag {
+  width: 25vw;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.music_list_containet {
+  display: flex;
+  width: 50vw;
+  /* border: 1px solid white; */
+  margin: 20px;
+  padding: 10px;
+  position: relative;
+}
+
+/* <div className="music_album_player_parent"> */
+
+.music_list_containet:hover {
+  /* background-color: rgba(255, 255, 255, 0.2); */
+  border-radius: 5px;
+
+}
+.music_list_containet:hover .playIcon{
+  display: block;
+}
+.playbutton {
+  display: flex;
+  align-items: center;
+  padding: 2px 15px;
+  border-radius: 15px;
+  background: #fff;
+  align-items: center;
+  color: black;
+}
+
+.play_btn_save_item_container{
+  margin-top: 5px;
+  display: flex;
+  gap: 10px;
+}
+.addbutton{
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 2px 5px;
+  color: black;
+
+}
+
+.playIcon{
+  position: absolute;
+  /* display: flex; */
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  top: 7px;
+  display: none;
+}

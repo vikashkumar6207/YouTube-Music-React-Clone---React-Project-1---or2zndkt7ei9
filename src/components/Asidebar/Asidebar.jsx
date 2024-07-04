@@ -7,7 +7,7 @@ const Asidebar = () => {
     <>
       <div className=" bg-inherit items-center pl-3">
         <div>
-          <NavLink to="/" className="asidemenu ">
+          <NavLink to="/" className="asidemenu">
             Home
           </NavLink>
           <NavLink to="/explore" className="asidemenu ">
