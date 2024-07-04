@@ -2,7 +2,11 @@ import React, { useEffect, useRef, useState } from "react";
 import Asidebar from "../Asidebar/Asidebar";
 import "./Songplay.css";
 import Musicplayer from "./Musicplayer";
+import { useNavigate } from "react-router-dom";
 const Songplay = (props) => {
+
+  const navigate = useNavigate();
+
   const musicIND = localStorage.getItem("songIndex");
   const [songData, setsongData] = useState({});
   const [currentPage, setCurrentpage] = useState(Number(musicIND));
@@ -30,12 +34,17 @@ const Songplay = (props) => {
     fetchAPI();
   },[]);
 
+  function backFunction(){
+    navigate('/musicalbumplayer');
+  }
+
   return (
     <div className="songplay_container">
       <div className="asidebar">
         <Asidebar></Asidebar>
       </div>
       <div className="mainbar">
+        <button onClick={backFunction} className="back_btn">Back</button>
         <div className="image_container">
         <img src={songData.thumbnail} alt="" className="image"/>
         </div>
