@@ -6,12 +6,14 @@ import cPlay from '../../assets/circle-play-solid.svg';
 import cplay1 from '../../assets/circle-play-solid (1).svg'
 import useUser from '../../customHooks/useUser';
 import { useNavigate } from 'react-router-dom';
-const Recommended = () => {
+import Loading from '../Loading/Loading';
+const Recommended = ({handlefavouriteSong}) => {
 
 
     const [musicList, setMusicList] = useState([]);
     const [error, setError] = useState("");
     const [selectedMusic, setSelectedMusic] = useState();
+    const [loading, setLoading] = useState(false);
 
     const {searchText} = useUser();
     useEffect(() => {
@@ -24,7 +26,7 @@ const Recommended = () => {
   
   
     async function fetchSongsList() {
-      
+      setLoading(true);
         let url;
         if(searchText != null && searchText != ""){
            url = `https://academics.newtonschool.co/api/v1/music/song?title=${searchText}`;
@@ -53,6 +55,7 @@ const Recommended = () => {
             if (result && Array.isArray(result.data)) {
               setMusicList(result.data);
               setError(error.message);
+              setLoading(false);
             } else {
               throw new Error("Data format is incorrect");
             }
@@ -70,6 +73,7 @@ const Recommended = () => {
 
   return (
     <>
+    { loading ? <Loading /> :
     <div>
         <div >
         <div className="mt-10">
@@ -106,6 +110,7 @@ const Recommended = () => {
             _id={selectedMusic._id}
             audio_url={selectedMusic.audio_url}
             thumbnail={selectedMusic.thumbnail}
+            handlefavouriteSong={handlefavouriteSong}
           />
          
           </>
@@ -113,6 +118,7 @@ const Recommended = () => {
         </div>
         
     </div>
+  }
     </>
   )
 }
