@@ -6,6 +6,7 @@ export const UserContext = React.createContext({
   nameHandler: () => {},
   tokenHandler: () => {},
   emailHandler: () => {},
+  logout: ()=>{},
   setSearchText: null,
 });
 
@@ -49,6 +50,13 @@ const UserProvider = (props) => {
     emailHandler,
     searchText,
     setSearchText,
+  };
+
+
+  const logout = () => {
+    setName("");
+    setToken("");
+    sessionStorage.clear();
   };
 
   return (

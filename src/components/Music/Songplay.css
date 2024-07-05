@@ -26,6 +26,8 @@
     width: 240px;
     border-radius: 5px;
 }
+
+
 .back_btn{
     background: #fff;
     color: #000;
@@ -36,4 +38,11 @@
     position: absolute;
     top: 105px;
     left: 21vw;
+}
+
+.heartIcon{
+    top: 15px;
+    left: 62px;
+    position: absolute;
+    cursor: pointer;
 }

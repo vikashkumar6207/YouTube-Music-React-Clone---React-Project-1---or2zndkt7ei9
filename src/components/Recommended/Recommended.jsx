@@ -7,8 +7,7 @@ import cplay1 from '../../assets/circle-play-solid (1).svg'
 import useUser from '../../customHooks/useUser';
 import { useNavigate } from 'react-router-dom';
 import Loading from '../Loading/Loading';
-const Recommended = ({handlefavouriteSong}) => {
-
+const Recommended = () => {
 
     const [musicList, setMusicList] = useState([]);
     const [error, setError] = useState("");

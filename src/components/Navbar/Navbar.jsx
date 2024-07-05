@@ -18,7 +18,7 @@ const Navbar = () => {
 
   return (
     <>
-    <div className=' flex fixed w-full bg-black text-white items-center p-2 justify-between Navbarborder' style={{height: '100px'}}>
+    <div className=' flex fixed w-full bg-inherit text-white items-center p-2 justify-between Navbarborder' style={{height: '100px'}}>
     <NavLink to="/" className='flex'>
         <img src={menu} className='h-6'/>
         <img src={logo} className=' w-20' />
@@ -28,10 +28,10 @@ const Navbar = () => {
         <input type='text' placeholder='Search songs, albums, artists, podcasts' className='searchInput' onChange={(e)=> setSearchText(e.target.value)}/>
 
     </div>
-    <div className='bg-transparent flex items-center '>
+    <div className='bg-inherit flex items-center '>
         <img src={cast} className=' w-6 bg-transparent  '/>
         <img src={ellipsis} className='h-6 mr-3 ml-3' />
-        <NavLink to="/login" >
+        <NavLink to="/login" className="bg-inherit">
         { !name ? <button className='w-20 bg-white text-black p-1 rounded-2xl'>Sign in</button> : <button className='w-20 bg-white text-black p-1 rounded-2xl'>{name}</button>}
         </NavLink>
         
