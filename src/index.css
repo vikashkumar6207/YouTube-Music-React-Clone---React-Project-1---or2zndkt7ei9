@@ -50,6 +50,10 @@
     
   
   }
+
+  .img_ontainer{
+    margin-right: 40px;
+  }
   
   audio{
     border-radius: 20px;
@@ -150,4 +154,9 @@ background: linear-gradient(115deg, rgba(21,22,24,1) 20%, rgba(210,42,199,1) 100
     right: 20px;
     /* color: black; */
     background: rgba(255, 255, 255, 1);
+  }
+
+  .Upgrade_container{
+    /* background: rgb(21,22,24); */
+background: linear-gradient(115deg, rgba(21,22,24,1) 0%, rgba(210,42,199,1) 100%) !important;
   }

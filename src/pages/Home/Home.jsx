@@ -16,8 +16,6 @@ import MoodFiltering from "../../components/MoodFiltering/MoodFiltering";
 
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Home = () => {
-
- 
   return (
     <>
       <div className="parentContainer">
@@ -29,15 +27,14 @@ const Home = () => {
           <div className="mainBody">
             <Buttons />
             {/* <FontAwesomeIcon icon="fa-regular fa-circle-play" /> */}
-            <Recommended  />
-            <Multiverse  />
+            <Recommended />
+            <Multiverse />
             <EasyEvenings />
             <Yoga />
             <Bollywood />
             <HindiHits />
             <Charts />
             <MoodFiltering />
-            
           </div>
         </div>
       </div>

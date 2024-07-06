@@ -9,7 +9,7 @@ const Musicplayer = (props) => {
 
 
 
-  async function likeUnlikeSongfun() {
+ /*  async function likeUnlikeSongfun() {
     const url = "https://academics.newtonschool.co/api/v1/music/favorites/like";
     const myHeaders = new Headers();
     myHeaders.append("Authorization", `Bearer ${getToken}`);
@@ -36,7 +36,7 @@ const Musicplayer = (props) => {
   } catch (error) {
     console.log("likeUnlikeSongfun", error);
   }
-  useEffect(() => {}, []);
+  useEffect(() => {}, []); */
 
   return (
     <>
