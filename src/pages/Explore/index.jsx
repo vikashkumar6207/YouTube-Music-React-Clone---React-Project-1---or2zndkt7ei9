@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { IoIosTrendingUp } from "react-icons/io";
 
 import img1 from "../../assets/Explore/Explore01.jpg";
 import img2 from "../../assets/Explore/Explore.jpg";
@@ -119,7 +120,8 @@ const Explore = () => {
         <Asidebar />
       </div>
       <div className="Mainbar">
-        {comming ? ( <Commingsoon />
+        {comming ? (
+          <Commingsoon />
         ) : (
           <div>
             <div className="ExploreParent">
@@ -138,7 +140,7 @@ const Explore = () => {
               </div>
             </div>
             <div>
-              <h1 className="text-2xl">Moods & genres</h1>
+              <h1 className="text-2xl mt-6">Moods & genres</h1>
               <div className="moodBtnContainer">
                 {MoodsWithColors.map((item, index) => (
                   <button
