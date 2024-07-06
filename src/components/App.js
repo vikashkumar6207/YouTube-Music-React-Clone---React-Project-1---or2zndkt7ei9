@@ -12,6 +12,7 @@ import Signup from "./Signup/Signup";
 import Page404 from "../pages/Page404";
 import Musicalbumplayer from "./Musicalbumplayer/Musicalbumplayer";
 import Songplay from "./Music/Songplay";
+import Upgrade from "./Upgrade/Upgrade";
 
 function App() {
   // const {user, loginWithRedirect} = useAuth0();
@@ -53,9 +54,12 @@ function App() {
           element={<Login setProfileImg={setProfileImg} />}
         ></Route>
         <Route path="/signup" element={<Signup />}></Route>
+        {<Route path="/upgrade" element={<Upgrade />}></Route>}
         <Route path="/musicalbumplayer" element={<Musicalbumplayer />}></Route>
         <Route path="/songplay" element={<Songplay /> }></Route>
+        
         <Route path="/*" element={<Page404 />}></Route>
+
       </Routes>
     </>
   );
