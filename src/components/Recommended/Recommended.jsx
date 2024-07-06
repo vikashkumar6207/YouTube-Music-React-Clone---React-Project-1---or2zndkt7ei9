@@ -109,7 +109,6 @@ const Recommended = () => {
             _id={selectedMusic._id}
             audio_url={selectedMusic.audio_url}
             thumbnail={selectedMusic.thumbnail}
-            handlefavouriteSong={handlefavouriteSong}
           />
          
           </>
