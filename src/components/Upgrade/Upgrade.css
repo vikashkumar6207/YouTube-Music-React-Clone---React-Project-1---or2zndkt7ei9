@@ -1,4 +1,79 @@
+
 .Upgrade_container{
     /* background: rgb(21,22,24); */
-background: linear-gradient(115deg, rgba(21,22,24,1) 0%, rgba(210,42,199,1) 100%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+    background: linear-gradient(115deg, rgba(21,22,24,1) 50%, rgba(210,42,199,1) 100%);
+}
+.logo{
+    background: transparent;
+    /* position: absolute; */
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.yt_premium{
+    background: transparent;
+}
+.logoIcon{
+    background: transparent;
+}
+.premium_Text{
+    background: transparent;
+}
+.get_music_premium{
+    height: 30px;
+    width: 150px;
+    background: #6060ff;
+    border-radius: 15px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+.prices_Text{
+    background: transparent;
+}
+.save_money_Text{
+    background: transparent;
+}
+.link-a{
+    background: transparent;
+}
+
+.first_poster{
+    /* position: absolute; */
+    height: 100px;
+    width: 100vw ;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    bottom: 0px;
+}
+.headfon{
+    height: max-content;
+    bottom: 0;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Icon{
+    height: 40px;
+    width: 40px;
+    margin-top: 2px;
+    padding: 5px;
+}
+
+.second_poster{
+    display: flex;
+    justify-content: space-between;
+}
+.card3{
+    
 }

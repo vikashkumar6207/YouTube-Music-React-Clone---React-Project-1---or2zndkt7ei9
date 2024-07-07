@@ -47,7 +47,7 @@ const Musicalbumplayer = () => {
     });
   }, []);
 
-  // useEffect(() => {}, []);
+  useEffect(() => {}, []);
 
   const handleSaveLibrary = () => {
     const obj = musiclist;

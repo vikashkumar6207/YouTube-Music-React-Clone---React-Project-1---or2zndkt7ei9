@@ -21,7 +21,7 @@ const UserProvider = (props) => {
 
 
 
-  console.log('USER PROVIDER LOGS',getName, getToken,getEmail );
+  // console.log('USER PROVIDER LOGS',getName, getToken,getEmail );
 
   const { children } = props;
 
@@ -39,7 +39,11 @@ const UserProvider = (props) => {
     setEmail(email);
     sessionStorage.setItem("email",email);
   }
-
+  const logout = () => {
+    setName("");
+    setToken("");
+    sessionStorage.clear();
+  };
  
 
   const valueObj = {
@@ -50,14 +54,11 @@ const UserProvider = (props) => {
     emailHandler,
     searchText,
     setSearchText,
+    logout,
   };
 
 
-  const logout = () => {
-    setName("");
-    setToken("");
-    sessionStorage.clear();
-  };
+ 
 
   return (
     <>

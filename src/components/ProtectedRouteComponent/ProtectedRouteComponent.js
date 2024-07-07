@@ -6,7 +6,7 @@ function ProtectedRouteComponent(props){
     const {children} = props;
 
     const {getToken} = useUser();
-    console.log(getToken, "ProtectedRouteComponent");
+    // console.log(getToken, "ProtectedRouteComponent");
 
     if(getToken){
         return <>{children}</>

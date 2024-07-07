@@ -28,7 +28,7 @@ const Recommended = () => {
       setLoading(true);
         let url;
         if(searchText != null && searchText != ""){
-           url = `https://academics.newtonschool.co/api/v1/music/song?title=${searchText}`;
+           url = `https://academics.newtonschool.co/api/v1/music/song?search={"title":"${searchText}"}`;
         }else{
           url = "https://academics.newtonschool.co/api/v1/music/song";
         }

@@ -30,7 +30,7 @@ const Asidebar = () => {
             <NavLink to="/upgrade" className="asidemenu">
              <SiYoutubemusic className="homeIcon"/> Upgrade
             </NavLink>
-          )}
+           )}
         </div>
         <div className="SignBtnContainer">
           {!name ? (

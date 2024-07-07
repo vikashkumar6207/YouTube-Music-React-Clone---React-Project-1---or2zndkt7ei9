@@ -11,6 +11,8 @@ const Bollywood = () => {
   const [currentAlbum,setCurrentAlbum] = useState('');
   const navigate = useNavigate();
     const {searchText} = useUser();
+
+
   useEffect(() => {
     try {
       getMusicAlbum();
@@ -19,16 +21,31 @@ const Bollywood = () => {
     }
   }, []);
 
-  useEffect(() => {
+ /*  useEffect(() => {
     try {
       getMusicAlbum();
     } catch (error) {
       console.log("getMusicAlbum", error);
     }
   }, [searchText]);
+ */
+
+  // const {searchText} = useUser();
+    // useEffect(() => {
+    //   getMusicAlbum();
+    // }, []);
+
+    useEffect(()=>{
+      getMusicAlbum();
+    },[searchText]);
+
     async function getMusicAlbum() {
-      let url = "https://academics.newtonschool.co/api/v1/music/album";
-      
+      let url;
+      if(searchText != null && searchText != ""){
+        url = `https://academics.newtonschool.co/api/v1/music/song?search={"title":"${searchText}"}`;
+     }else{
+       url = "https://academics.newtonschool.co/api/v1/music/album";
+     }
       const myHeaders = new Headers();
       myHeaders.append("projectId", "z5civ6ptecws");
 
@@ -45,8 +62,8 @@ const Bollywood = () => {
     
     }
     
- 
 
+    
   return (
 
     <div>

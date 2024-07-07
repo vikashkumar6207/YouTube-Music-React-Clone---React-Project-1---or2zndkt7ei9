@@ -11,10 +11,18 @@ import { UserContext } from '../../Provider/UserProvider';
 const Navbar = () => {
 
   const contextData = useContext(UserContext);
-  const {setSearchText} = contextData;
+  const {setSearchText, logout} = contextData;
+
 
   const name = sessionStorage.getItem("name");
-         
+      
+  const loginlogoutfun = ()=>{
+    if(name){ 
+      logout();
+      alert('you want to loggedout');
+
+    }
+  }
 
   return (
     <>
@@ -32,7 +40,7 @@ const Navbar = () => {
         <img src={cast} className=' w-6 bg-transparent  '/>
         <img src={ellipsis} className='h-6 mr-3 ml-3' />
         <NavLink to="/login" className="bg-inherit">
-        { !name ? <button className='w-20 bg-white text-black p-1 rounded-2xl'>Sign in</button> : <button className='w-20 bg-white text-black p-1 rounded-2xl'>{name}</button>}
+        { !name ? <button className='w-20 bg-white text-black p-1 rounded-2xl'>Sign in</button> : <button onClick={loginlogoutfun} className='w-20 bg-white text-black p-1 rounded-2xl'>{name}</button>}
         </NavLink>
         
     </div>
