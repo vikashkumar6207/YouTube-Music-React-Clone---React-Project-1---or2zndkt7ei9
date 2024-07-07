@@ -53,7 +53,7 @@ const Recommended = () => {
             // console.log("Fetched data:", result);
             if (result && Array.isArray(result.data)) {
               setMusicList(result.data);
-              setError(error.message);
+              
               setLoading(false);
             } else {
               throw new Error("Data format is incorrect");
