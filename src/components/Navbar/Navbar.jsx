@@ -28,12 +28,12 @@ const Navbar = () => {
     <>
     <div className=' flex fixed w-full bg-inherit text-white items-center p-2 justify-between Navbarborder' style={{height: '100px'}}>
     <NavLink to="/" className='flex'>
-        <img src={menu} className='h-6'/>
+        <img src={menu} className='h-6 pl-2 pr-4'/>
         <img src={logo} className=' w-20' />
     </NavLink>
     <div className='bg-inherit'>
         <img src={srch} className='absolute  h-5 mt-3 ml-3' style={{background: 'transparent'}}/>
-        <input type='text' placeholder='Search songs, albums, artists, podcasts' className='searchInput' onChange={(e)=> setSearchText(e.target.value)}/>
+        <input type='text' placeholder='Search songs by title..' className='searchInput' onChange={(e)=> setSearchText(e.target.value)}/>
 
     </div>
     <div className='bg-inherit flex items-center '>

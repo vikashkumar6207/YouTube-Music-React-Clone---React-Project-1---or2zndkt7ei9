@@ -38,9 +38,6 @@ const Library = () => {
     }
   }
 
-  /* function getlikeSongfun() {
-    setLikeSontstatus(true);
-  } */
   const arr = ["Playlists", "Podcasts", "Songs", "Albums", "Artists"];
   return (
     <>

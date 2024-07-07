@@ -45,22 +45,22 @@ const Recommended = () => {
     
           try {
             const response = await fetch(url, requestOptions);
-            if (!response.ok) {
+           /*  if (!response.ok) {
               throw new Error(`HTTP error! status: ${response.status}`);
-            }
+            } */
     
             const result = await response.json();
             // console.log("Fetched data:", result);
             if (result && Array.isArray(result.data)) {
               setMusicList(result.data);
-              
+              setError(null);
               setLoading(false);
             } else {
               throw new Error("Data format is incorrect");
             }
           } catch (error) {
             // console.error("Error fetching data:", error);
-            setError(error.message);
+            setError("Please enter valid text");
           }
         }
        
