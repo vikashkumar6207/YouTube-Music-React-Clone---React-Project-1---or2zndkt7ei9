@@ -1,11 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import Musicplayer from '../Music/Musicplayer';
-import play from '../../assets/play-solid.svg';
 import cPlay from '../../assets/circle-play-solid.svg';
-import cplay1 from '../../assets/circle-play-solid (1).svg'
 import useUser from '../../customHooks/useUser';
-import { useNavigate } from 'react-router-dom';
 import Loading from '../Loading/Loading';
 const Recommended = () => {
 
@@ -14,13 +11,17 @@ const Recommended = () => {
     const [selectedMusic, setSelectedMusic] = useState();
     const [loading, setLoading] = useState(false);
 
+
+
     const {searchText} = useUser();
     useEffect(() => {
       fetchSongsList();
     }, []);
 
     useEffect(()=>{
+     
       fetchSongsList();
+      
     },[searchText]);
   
   
@@ -45,12 +46,7 @@ const Recommended = () => {
     
           try {
             const response = await fetch(url, requestOptions);
-           /*  if (!response.ok) {
-              throw new Error(`HTTP error! status: ${response.status}`);
-            } */
-    
             const result = await response.json();
-            // console.log("Fetched data:", result);
             if (result && Array.isArray(result.data)) {
               setMusicList(result.data);
               setError(null);
