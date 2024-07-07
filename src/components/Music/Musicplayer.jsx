@@ -45,14 +45,14 @@ console.log('likeSong',likeSong)
       <div>
         <div className="music_player" key={_id}>
           <div className="img_ontainer">
-            <p className="heartIcon" onClick={likeUnlikefunction}>
+           {getToken && <p className="heartIcon" onClick={likeUnlikefunction}>
               &#128151;
-            </p>
+            </p>}
             <img className="music_player_image" src={thumbnail} />
           </div>
 
           <div className="music_title">{title}</div>
-          <audio controls src={audio_url}></audio>
+          <audio controls src={audio_url} className="bg-inherit"></audio>
         </div>
       
       </div>

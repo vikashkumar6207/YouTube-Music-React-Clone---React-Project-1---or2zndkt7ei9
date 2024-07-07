@@ -18,40 +18,76 @@
 }
 .yt_premium{
     background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
-.logoIcon{
+.logo_icon{
+    
+    margin-top: 104px;
+    max-height: 40px;
     background: transparent;
 }
 .premium_Text{
     background: transparent;
+    text-align: center;
+    margin-top: 40px;
+    font-family: "YouTube Sans", "Roboto", sans-serif;
+    font-size: 4rem;
+    line-height: 5rem;
+    font-weight: 700;
 }
 .get_music_premium{
-    height: 30px;
-    width: 150px;
+    /* height: 40px; */
+    /* width: 150px; */
     background: #6060ff;
-    border-radius: 15px;
-    padding: 5px;
+    border-radius: 20px;
+    padding: 8px 15px;
     display: flex;
     align-items: center;
+ 
 }
 .prices_Text{
     background: transparent;
+    margin-bottom: 40px;
+    
 }
 .save_money_Text{
     background: transparent;
+    text-align: center;
+    margin-top: 40px;
+    font-family: "Roboto", "Arial", sans-serif;
+    font-size: 1rem;
+    line-height: 2.6rem;
+    font-weight: 400;
 }
 .link-a{
     background: transparent;
+    text-align: center;
+    margin-top: 40px;
+    font-family: "Roboto", "Arial", sans-serif;
+    font-size: 1rem;
+    line-height: 2rem;
+    font-weight: 700;
+    color: #3232b3;
 }
-
+.Restrictions_txt{
+    background: transparent;
+    font-size: 12px;
+    font-weight: 400;
+    color: #3232b3;
+}
 .first_poster{
-    /* position: absolute; */
-    height: 100px;
+
+   
+    height: 150px;
     width: 100vw ;
+   
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
-    bottom: 0px;
+    align-items: center;
+
 }
 .headfon{
     height: max-content;

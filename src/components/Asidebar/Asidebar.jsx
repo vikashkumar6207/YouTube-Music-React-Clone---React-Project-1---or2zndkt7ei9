@@ -22,15 +22,15 @@ const Asidebar = () => {
           <NavLink to="/library" className="asidemenu ">
           <MdLibraryMusic className="homeIcon"/>Library
           </NavLink>
-          {!name ? (
+         {/*  {!name ? (
             <NavLink to="/login" className="asidemenu">
               Login
             </NavLink>
-          ) : (
-            <NavLink to="/upgrade" className="asidemenu">
+          ) : ( */}
+           { name && <NavLink to="/upgrade" className="asidemenu">
              <SiYoutubemusic className="homeIcon"/> Upgrade
-            </NavLink>
-           )}
+            </NavLink>}
+           {/* )} */}
         </div>
         <div className="SignBtnContainer">
           {!name ? (

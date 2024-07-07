@@ -4,17 +4,18 @@ import headphone from '../../assets/headphone-logo.png';
 import play from '../../assets/play-icon.png'; 
 import download from '../../assets/download-icon.png'; 
 import './Upgrade.css';
+import uplogo from '../../assets/Upgrade_page_logo.png';
 // import 
 const Upgrade = () => {
  
     return <>
     <div className='Upgrade_container'>
         <div className="yt_premium">
-            <img src={logo} alt="yt_logo" className='logo icon'/>
+            <img src={uplogo} alt="yt_logo" className='logo_icon'/>
             <h1 className='premium_Text'>Get Music Premium to listen to music <br />ad-free, offline & with your screen off</h1>
+            <h1 className='prices_Text'>Prepaid and monthly plans available. Starting from ₹99.00​/month. Free trials with monthly plans. </h1>
             <button className='get_music_premium' >get music Premium</button>
-            <h1 className='prices_Text'>Prepaid and subscription plans available. Prices start <br />at ₹99.00/month. Free trials available with subscription plans only.</h1>
-            <p className='save_money_Text'>Or save money with an annual, <span className='link-a'>family or student plan <br /> Restrictions apply. Learn more here.</span> </p>
+            <p className='save_money_Text'>Or save money with an annual, <span className='link-a'>family or student plan <br /><span className='Restrictions_txt'> Restrictions apply.</span></span> </p>
         </div>
         <div className="first_poster">
             <div className=" headfon">
