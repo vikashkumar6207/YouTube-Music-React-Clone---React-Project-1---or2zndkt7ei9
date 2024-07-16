@@ -1,0 +1,175 @@
+
+/* .Navbarborder{ */
+    /* display: flex; */
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    /* padding: 8px; */
+    /* position: fixed; */
+    /* width: 100vw; */
+    /* height: 100px; */
+    /* background: transparent; */
+    /* color: #fff; */
+    /* border-bottom:  1px solid rgba(255, 255, 255, 0.2); */
+
+    /* style={{height: '100px'}} */
+    /* flex fixed w-full bg-inherit text-white items-center p-2 justify-between */
+/* } */
+/* .iconMenu{ */
+    /* display: flex; */
+/* } */
+/* .menu{ */
+/*  */
+    /* height: 24px; */
+    /* padding: 0 16px 0 8px; */
+/*  */
+    /* h-6 pl-2 pr-4 */
+/* } */
+/* .icon{ */
+    /* width: 80px; */
+    /* w-20 */
+/* } */
+/* .input_container{ */
+    /* background: transparent; */
+    /* bg-inherit */
+/* } */
+/* .search_icon{ */
+    /* height: 20px; */
+    /* margin-top: 12px; */
+    /* margin-left: 12px; */
+    /* position: absolute; */
+/*  */
+    /* absolute  h-5 mt-3 ml-3  */
+/* } */
+/* .searchInput{ */
+    /* background: rgba(255, 255, 255, 0.2); */
+    /* width: 42vw; */
+    /* height: 40px; */
+    /* border-radius: 8px; */
+    /* padding-left: 40px; */
+/* } */
+
+/* .cast_logo_container{ */
+        /* display: flex; */
+        /* align-items: center; */
+        /* background: transparent; */
+    /* bg-inherit flex items-center  */
+/* } */
+
+/* .cast_icon{ */
+    /* width: 24px; */
+    /* background: transparent; */
+    /* w-6 bg-transparent   */
+/* } */
+/* .ellipsis_icon{ */
+    /* height: 24px; */
+    /* margin-right: 12px; */
+    /* margin-left: 12px; */
+    /* h-6 mr-3 ml-3  */
+/* } */
+
+/* .sign_button{ */
+    /* width: 80px; */
+    /* padding: 4px; */
+    /* border-radius: 24px; */
+    /* background: #fff; */
+    /* color: #000; */
+    /* w-20 bg-white text-black p-1 rounded-2xl  */
+    /* w-20 bg-white text-black p-1 rounded-2xl */
+/* } */
+
+
+@media only screen and (max-width:768px){
+    .searchInput{
+       display: none;
+        /* width: 250px; */
+        /* margin-right: 5px; */
+    }
+    .searchIcon{
+        top: 30px;
+        right: 170px;
+    }
+    .cast_ellipsis{
+      margin-right: 2vw;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .searchInput{
+       display: none;
+        /* width: 250px; */
+        /* margin-right: 5px; */
+    }
+    .searchIcon{
+        top: 30px;
+        right: 170px;
+    }
+    .cast_ellipsis{
+      margin-right: 2vw;
+    }
+}
+
+
+/* -------------- */
+
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* The actual popup */
+  .popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: -250%;
+    left: 0%;
+    margin-left: -80px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+  .conformation{
+    background: transparent;
+    display: flex;
+    justify-content: space-around;
+  }
+  /* Popup arrow */
+  .popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  /* Toggle this class - hide and show the popup */
+  .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+  }
+  
+  /* Add animation (fade in the popup) */
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }

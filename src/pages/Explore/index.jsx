@@ -31,6 +31,7 @@ import "./Explore.css";
 import useUser from "../../customHooks/useUser";
 import Loading from "../../components/Loading/Loading";
 import Musicplayer from "../../components/Music/Musicplayer";
+import { useNavigate } from "react-router-dom";
 
 const Explore = () => {
   const [comming, setComming] = useState(false);
@@ -124,156 +125,161 @@ const Explore = () => {
   const [selectedMusic, setSelectedMusic] = useState();
   const [loading, setLoading] = useState(false);
 
-  const {searchText} = useUser();
+  const { searchText } = useUser();
   useEffect(() => {
     fetchSongsList();
   }, []);
 
-  useEffect(()=>{
+  useEffect(() => {
     fetchSongsList();
-  },[searchText]);
-
+  }, [searchText]);
 
   async function fetchSongsList() {
     setLoading(true);
-      let url;
-      if(searchText != null && searchText != ""){
-         url = `https://academics.newtonschool.co/api/v1/music/song?search={"title":"${searchText}"}`;
-      }else{
-        url = "https://academics.newtonschool.co/api/v1/music/song";
-      }
-      const myHeaders = new Headers();
-        myHeaders.append("projectId", "z5civ6ptecws");
-  
-        const requestOptions = {
-          method: "GET",
-          headers: myHeaders,
-          redirect: "follow",
-        };
-  
-        fetch(url, requestOptions);
-  
-        try {
-          const response = await fetch(url, requestOptions);
-         /*  if (!response.ok) {
+    let url;
+    if (searchText != null && searchText != "") {
+      url = `https://academics.newtonschool.co/api/v1/music/song?search={"title":"${searchText}"}`;
+    } else {
+      url = "https://academics.newtonschool.co/api/v1/music/song";
+    }
+    const myHeaders = new Headers();
+    myHeaders.append("projectId", "z5civ6ptecws");
+
+    const requestOptions = {
+      method: "GET",
+      headers: myHeaders,
+      redirect: "follow",
+    };
+
+    fetch(url, requestOptions);
+
+    try {
+      const response = await fetch(url, requestOptions);
+      /*  if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
           } */
-  
-          const result = await response.json();
-          // console.log("Fetched data:", result);
-          if (result && Array.isArray(result.data)) {
-            setMusicList(result.data);
-            setError(null);
-            setLoading(false);
-          } else {
-            throw new Error("Data format is incorrect");
-          }
-        } catch (error) {
-          // console.error("Error fetching data:", error);
-          setError("Please enter valid text");
-        }
-      }
-     
 
-    
-    if (error) {
-      return <p>Error : {error}</p>;
+      const result = await response.json();
+      // console.log("Fetched data:", result);
+      if (result && Array.isArray(result.data)) {
+        setMusicList(result.data);
+        setError(null);
+        setLoading(false);
+      } else {
+        throw new Error("Data format is incorrect");
+      }
+    } catch (error) {
+      // console.error("Error fetching data:", error);
+      setError("Please enter valid text");
     }
+  }
+
+  if (error) {
+    return <p>Error : {error}</p>;
+  }
 
   // -------------------
 
   return (
-    
     <div className="ExploreConatiner">
-      
       <div className="Asidebar">
         <Asidebar />
       </div>
       <div>
-      <div className="Mainbar">
-        {comming ? (
-          <Commingsoon />
-        ) : (
-          <div>
-            <div className="ExploreParent">
-              {Button.map((btn, index) => (
-                <button className="ExploreBtn" key={index}>
-                  {btn}
-                </button>
-              ))}
-            </div>
-            <div className="overflow-scroll mt-10">
-              <h1 className="text-2xl font-bold mb-5">New albums & singles</h1>
-              <div className="flex gap-1 m-1 mt-4">
-                {arr.map((image, index) => (
-                  <img src={image} key={index} className="h-52 w-48" />
-                ))}
-              </div>
-            </div>
+        <div className="Mainbar">
+          {comming ? (
+            <Commingsoon />
+            ) : (
+              <div>
             <div>
-              <h1 className="text-2xl mt-6">Moods & genres</h1>
-              <div className="moodBtnContainer">
-                {MoodsWithColors.map((item, index) => (
-                  <button
-                    onClick={commingsoonfun}
-                    className="btnClass"
-                    style={{ borderLeft: `10px solid ${item.color}`}}
-                  >
-                    {item.mood}
+              <div className="ExploreParent">
+                {Button.map((btn, index) => (
+                  <button className="ExploreBtn" key={index}>
+                    {btn}
                   </button>
                 ))}
               </div>
-            </div>
-          </div>
-          
-        )}
-        { loading ? <Loading/> :
-    <div>
-        <div >
-        <div className="mt-10">
-          <h1 className="text-2xl font-bold mb-5">Explore</h1>
-          <div className="flex overflow-scroll gap-1 ">
-            {musicList.map((song, index) => {
-              const { title, _id, audio_url, thumbnail } = song;
-              return (
-                <div className="flex" key={index}>
-                
-                  <div className="flex w-48 gap-1">
-                    <section
-                      onClick={() =>
-                        setSelectedMusic({ title, _id, audio_url, thumbnail })
-                      }
+              <div className="overflow-scroll mt-10">
+                <h1 className="text-2xl font-bold mb-5">
+                  New albums & singles
+                </h1>
+                <div className="flex gap-1 m-1 mt-4">
+                  {arr.map((image, index) => (
+                    <img src={image} key={index} className="h-52 w-48" />
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h1 className="text-2xl mt-6">Moods & genres</h1>
+                <div className="moodBtnContainer">
+                  {MoodsWithColors.map((item, index) => (
+                    <button
+                      onClick={commingsoonfun}
+                      className="btnClass"
+                      style={{ borderLeft: `10px solid ${item.color}` }}
                     >
-                      <div className='ImgContainer'>
-                     
-                        <img src={thumbnail} alt="" className="h-52 w-48 imageTag" />
-                      </div>
-                      
-                      <p>{title}</p>
-                    </section>
+                      {item.mood}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+           
+            {loading ? (
+            <Loading />
+            ) : (
+            <div>
+              <div>
+                <div className="mt-10">
+                  <h1 className="text-2xl font-bold mb-5">Explore</h1>
+                  <div className="flex overflow-scroll gap-1 ">
+                    {musicList.map((song, index) => {
+                      const { title, _id, audio_url, thumbnail } = song;
+                      return (
+                        <div className="flex" key={index}>
+                          <div className="flex w-48 gap-1">
+                            <section
+                              onClick={() =>
+                                setSelectedMusic({
+                                  title,
+                                  _id,
+                                  audio_url,
+                                  thumbnail,
+                                })
+                              }
+                            >
+                              <div className="ImgContainer">
+                                <img
+                                  src={thumbnail}
+                                  alt=""
+                                  className="h-52 w-48 imageTag"
+                                />
+                              </div>
+
+                              <p>{title}</p>
+                            </section>
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
-              );
-            })}
-          </div>
+                {selectedMusic && (
+                  <>
+                    <Musicplayer
+                      title={selectedMusic.title}
+                      _id={selectedMusic._id}
+                      audio_url={selectedMusic.audio_url}
+                      thumbnail={selectedMusic.thumbnail}
+                    />
+                  </>
+                )}
+              </div>
+            </div>
+            )}
+            </div>
+          )}
         </div>
-        {selectedMusic && (
-          <>
-          <Musicplayer
-            title={selectedMusic.title}
-            _id={selectedMusic._id}
-            audio_url={selectedMusic.audio_url}
-            thumbnail={selectedMusic.thumbnail}
-          />
-         
-          </>
-        )}
-        </div>
-        
-    </div>
-  }
-      </div>
-      
       </div>
     </div>
   );

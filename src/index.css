@@ -159,3 +159,10 @@ background: linear-gradient(115deg, rgba(21,22,24,1) 20%, rgba(210,42,199,1) 100
   .Upgrade_container{
    background: rgba(255, 255, 255, 0.2);
   }
+
+  @media screen  {
+    
+  }
+  .aside_conatiner{
+
+  }

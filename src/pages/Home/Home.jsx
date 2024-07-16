@@ -34,7 +34,7 @@ const Home = () => {
             <Bollywood />
             <HindiHits />
             <Charts />
-            <MoodFiltering />
+            {/* <MoodFiltering /> */}
           </div>
         </div>
       </div>

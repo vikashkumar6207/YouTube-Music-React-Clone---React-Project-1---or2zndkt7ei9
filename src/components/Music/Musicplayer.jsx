@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import useUser from "../../customHooks/useUser";
 import { useNavigate } from "react-router-dom";
-
+import { CiHeart } from "react-icons/ci";
 const Musicplayer = (props) => {
   const { title, _id, audio_url, thumbnail } = props;
   const [likeSong, setLikeSong] = useState();
+  const [bool, setBool] = useState(false);
   const { getToken } = useUser();
+
   // const getToken = sessionStorage.getItem("token");
 
   console.log('likeUnlikefunction',getToken);
@@ -40,13 +42,27 @@ const Musicplayer = (props) => {
 // },[])
 
 console.log('likeSong',likeSong)
+// let bool;
+function likefunction(){
+  // {bool ? '❤️' : <CiHeart /> }
+  
+  /* const heart = document.getElementsByClassName('heartIcon');
+  bool = bool ? false : true; */
+  setBool(!bool);
+
+}
+
   return (
     <>
       <div>
         <div className="music_player" key={_id}>
           <div className="img_ontainer">
-           {getToken && <p className="heartIcon" onClick={likeUnlikefunction}>
-              &#128151;
+           {getToken && <p className="heartIcon"  onClick={()=>{
+            likeUnlikefunction()
+            likefunction();
+           }}>
+              {/* &#128151; */}
+              {bool ? '❤️' : <CiHeart /> }
             </p>}
             <img className="music_player_image" src={thumbnail} />
           </div>

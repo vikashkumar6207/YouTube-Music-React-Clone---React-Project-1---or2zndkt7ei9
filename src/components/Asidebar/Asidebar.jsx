@@ -10,7 +10,7 @@ const Asidebar = () => {
 
   return (
     <>
-      <div className=" bg-inherit items-center pl-3">
+      <div className=" bg-inherit items-center pl-3 aside_conatiner">
         <div>
           <NavLink to="/" className="asidemenu">
           <GoHome className="homeIcon"/> Home
